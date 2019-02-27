@@ -27,11 +27,18 @@
       <td>{{ $medicine->compostion }}</td>
       <td>{{ $medicine->manufacturer }}</td>
       <td>{{ $medicine->availability }}</td>
-  <td> <a class="btn btn-success btn-sm br-25" href="{{ url('/medicine/edit/'.$medicine->id) }}" > Edit </a>
+  <td>
+     <a class="btn btn-success btn-sm br-25" href="{{ url('/medicine/edit/'.$medicine->id) }}" > Edit </a>
      <a href="{{ url('edit/'.$medicine->id) }}"> <i class="fa fa-edit"></i> </a>
-      <input type="submit" class="btn btn-success btn-sm  br-25" value="Delete " /></td>
 
 
+
+     <a class="btn btn-success btn-sm br-25" onclick="return confirm('Are you sure?')"   href="{{ url('/medicine/delete/'.$medicine->id) }}" > Delete </a>
+     <a href="{{ url('delete/'.$medicine->id) }}"> <i class="fa fa-delete"></i> </a>
+
+
+
+      </td>
  </tr>
 
 
@@ -47,4 +54,11 @@
 
 
 </div>
+@endsection
+@section('js')
+
+https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.js
+https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css
+
+
 @endsection

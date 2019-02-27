@@ -21,6 +21,7 @@ Route::get('medicine/new', 'HomeController@addMedicine');
 Route::post('medicine/new', 'HomeController@storeMedicine');
 Route::get('medicine/edit/{id}', 'HomeController@editMedicine');
 Route::post('medicine/edit/{id}', 'HomeController@updateMedicine');
+Route::get('medicine/delete/{id}', 'HomeController@deleteMedicine');
 
 // Admin Routes
 

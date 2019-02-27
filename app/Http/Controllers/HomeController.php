@@ -64,7 +64,10 @@ class HomeController extends Controller
 
     public function deleteMedicine($id)
     {
-
+        $medicine = Medicine::findOrFail($id);
+        $medicine->delete();
+        Flashy::message("Message removed successfully!!!!");
+        return redirect('/home');
     }
 
 }
