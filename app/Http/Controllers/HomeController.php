@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Medicine;
+use Auth;
+use Flashy;
+use Request;
 
 class HomeController extends Controller
 {
@@ -23,6 +26,45 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $medicines = Medicine::where('userid', Auth::user()->id)->get();
+        return view('home', compact('medicines'));
     }
+
+    public function addMedicine()
+    {
+        return view('medicines.addMedicine');
+    }
+
+    public function storeMedicine()
+    {
+        $req = Request::all();
+        $req['userid'] = Auth::user()->id;
+        Medicine::create($req);
+        return redirect('home');
+    }
+
+    // edit medicine//
+    public function editMedicine($id)
+    {
+        $medicine = Medicine::findOrFail($id);
+        return view('medicines.editMedicine', compact('medicine'));
+    }
+
+    /*
+     * Update medicine
+     */
+    public function updateMedicine($id)
+    {
+        $medicine = Medicine::findOrFail($id);
+        $req = Request::all();
+        $medicine->update($req);
+        Flashy::message('Message updated successfully!!!');
+        return redirect('/home');
+    }
+
+    public function deleteMedicine($id)
+    {
+
+    }
+
 }
