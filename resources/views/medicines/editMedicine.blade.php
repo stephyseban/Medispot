@@ -5,7 +5,7 @@
 <div class="container">
 
 
-<h4 class="mb-3"> <i class="fa fa-plus"></i>  Add Medicine</h4>
+<h4 class="mb-3"> <i class="fa fa-plus"></i>  Edit Medicine</h4>
 
 <form method="POST" action="{{ url('medicine/edit/'.$medicine->id) }}">
 
@@ -59,7 +59,7 @@
 
 
   <div class="col-sm">
-      <input type="submit" class="btn btn-success btn-lg"  value="Edit " />
+      <input type="submit" class="btn btn-success btn-lg"  value="Edit" />
 
     </div>
 </form>

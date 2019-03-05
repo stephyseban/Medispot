@@ -26,7 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $medicines = Medicine::where('userid', Auth::user()->id)->get();
+        $medicines = Medicine::where('userid', Auth::user()->id)->paginate(10);
         return view('home', compact('medicines'));
     }
 
@@ -43,7 +43,7 @@ class HomeController extends Controller
         return redirect('home');
     }
 
-    // edit medicine//
+    // edit  medicine//
     public function editMedicine($id)
     {
         $medicine = Medicine::findOrFail($id);

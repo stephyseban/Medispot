@@ -1,12 +1,17 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('content')
 
+
+
+
+
+
 <div class="container">
-<div class="float-right">
-  <a href="{{ url('medicine/new') }}" class="btn btn-success">Add Medicine</a>
-</div>
+
+
+
   <table class="table">
-  <thead class="thead-dark">
+
     <tr>
       <th scope="col">Name</th>
       <th scope="col">Code</th>
@@ -18,38 +23,28 @@
     </tr>
   </thead>
   <tbody>
+
+
+
+
 @foreach($medicines as $medicine)
-
 <tr>
-      <th scope="row">{{ $medicine->name }}</th>
-      <td>{{ $medicine->code }}</td>
-      <td>{{ $medicine->description }}</td>
-      <td>{{ $medicine->compostion }}</td>
-      <td>{{ $medicine->manufacturer }}</td>
-      <td>{{ $medicine->availability }}</td>
-  <td>
-     <a class="btn btn-success btn-sm br-25" href="{{ url('/medicine/edit/'.$medicine->id) }}" > Edit </a>
-      <a class="btn btn-success btn-sm br-25 text-white" onclick="return confirmDelete({{ $medicine->id }});"  > Delete </a>
-  </td>
- </tr>
+<td>{{$medicine->name}}</td>
+<td>{{$medicine->code}}</td>
+<td>{{$medicine->description}}</td>
+<td>{{$medicine->compostion}}</td>
+<td>{{$medicine->manufacturer}}</td>
+<td>{{$medicine->availability}}</td>
+<td>
 
-@endforeach
+<a class="btn btn-success btn-sm br-25" href="{{ url('admin/users/medicines/edit/'.$medicine->id) }}" >  Edit  </a>
+       <a class="btn btn-success btn-sm br-25" onclick="return confirmDelete({{ $medicine->id }});"  > Delete </a>
+       </a>
+</tr>
 
-
-@if(count($medicines) == 0)
-<tr><td colspan="7">
-No data available</td></tr>
-@endif
-
-</tbody>
-</table>
-
-
-{{{ $medicines->render() }}}
 </div>
-
-@endsection
-
+@endforeach
+@stop
 @section('js')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.all.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css" />
@@ -71,7 +66,7 @@ function confirmDelete(id){
         'Your file has been deleted.',
         'success'
       );
-      window.location.href = "{{ url('medicine/delete/') }}/"+id;
+      window.location.href = "{{ url('admin/users/delete/') }}/"+id;
       }
 })
 
