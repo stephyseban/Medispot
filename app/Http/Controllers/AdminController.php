@@ -59,7 +59,7 @@ class AdminController extends Controller
         $req = Request::all();
         $medicines->delete($req);
         Flashy::message('Message deleteted successfully!!!');
-        return redirect('admin/users');
+        return redirect('admin/users/medicines/' . $medicines->userid);
     }
 
 //------------user controll details for admin
@@ -129,11 +129,22 @@ class AdminController extends Controller
 
     public function deleteNews($id)
     {
-        $news = News::findOrfail($id)
+        $news = News::findOrfail($id);
         $req = request::all();
         $news->delete($req);
         flashy::message('message deleted......');
         return redirect('admin/news');
+    }
+
+    //====admin view------//
+    public function adminView()
+    {
+        $users = User::count();
+        $medicines = Medicine::count();
+
+        $latest_users = User::orderBy('id', 'DESC')->get()->take(5);
+        $latest_medicines = Medicine::orderBy('id', 'DESC')->get()->take(4);
+        return view('admin.adminView', compact('users', 'medicines', 'latest_users', 'latest_medicines'));
     }
 
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Medicine;
+use App\News;
 use Auth;
 use Flashy;
 use Request;
@@ -16,7 +17,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth',['except' => ['viewNews']]);
     }
 
     /**
@@ -70,4 +71,32 @@ class HomeController extends Controller
         return redirect('/home');
     }
 
+    // news view  to user
+    public function viewNews()
+    {
+        $news = News::all();
+        return view('medicines.newsView', compact('news'));
+    }
+
+
+
+
+public function search()
+{
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+

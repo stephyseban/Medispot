@@ -66,7 +66,7 @@ function confirmDelete(id){
         'Your file has been deleted.',
         'success'
       );
-      window.location.href = "{{ url('admin/users/delete/') }}/"+id;
+      window.location.href = "{{ url('admin/users/medicines/delete/') }}/"+id;
       }
 })
 
