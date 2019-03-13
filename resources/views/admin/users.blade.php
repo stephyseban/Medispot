@@ -6,8 +6,8 @@
 
 
 
-  <table class="table">
-  <thead class="thead-dark">
+  <table class="table table-striped table-bordered">
+  <thead >
     <tr>
     <th scope="col">User name</th>
       <th scope="col">Email</th>
@@ -29,7 +29,7 @@
 
 <td>
     <a class="btn btn-success btn-sm br-25" href="{{ url('admin/users/edit/'.$user->id) }}" >  Edit  </a>
-       <a class="btn btn-success btn-sm br-25" onclick="return confirmDelete({{ $user->id }});"  > Delete </a>
+       <a class="btn btn-success text-white btn-sm br-25"  onclick="return confirmDelete({{ $user->id }});"  > Delete </a>
 
       <a class="btn btn-success btn-sm br-25" href="{{ url('admin/users/medicines/'.$user->id) }}" >  Medicines  </a>
        </a>

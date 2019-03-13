@@ -33,6 +33,10 @@ Route::get('medicine/delete/{id}', 'HomeController@deleteMedicine');
 //user view news
 Route::get('medicine/news', 'HomeController@viewNews');
 
+//serch view medicine//
+Route::get('search', 'PageController@search');
+Route::get('search/{id}', 'PageController@searchResult');
+
 // ============================Admin Routes============================//
 //=======================================================================//
 
@@ -66,5 +70,3 @@ Route::get('admin/news/edit/{id}', 'AdminController@editNews');
 Route::post('admin/news/edit/{id}', 'AdminController@updateNews');
 // delete news
 Route::get('admin/news/delete/{id}', 'AdminController@deleteNews');
-
-Route::get('/search', 'HomeController@search');

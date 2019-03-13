@@ -10,7 +10,7 @@
 
 
 
-  <table class="table">
+  <table class="table table-striped ">
 
     <tr>
       <th scope="col">Name</th>
@@ -38,7 +38,7 @@
 <td>
 
 <a class="btn btn-success btn-sm br-25" href="{{ url('admin/users/medicines/edit/'.$medicine->id) }}" >  Edit  </a>
-       <a class="btn btn-success btn-sm br-25" onclick="return confirmDelete({{ $medicine->id }});"  > Delete </a>
+       <a class="btn btn-success text-white btn-sm br-25" onclick="return confirmDelete({{ $medicine->id }});"  > Delete </a>
        </a>
 </tr>
 

@@ -10,7 +10,7 @@
 {{ csrf_field() }}
 
 <div class="form-group"><label>title</label><input type="text" name="title" placeholder="title"class="form-control">
-<div class="form-group"><label>message</label><input type="text" name="message" placeholder="message"class="form-control">
+<div class="form-group"><label>message</label><textarea class="form-control" name="message" placeholder="message"class="form-control"></textarea>
 
 
 </div>
@@ -18,7 +18,7 @@
 
 
 <div class="col-sm">
-     <input type="submit" class="btn btn-success btn-block  br-25" value="Add " />
+     <input type="submit" class="btn btn-success   br-25" value="Add " />
     </div>
 </form>
 

@@ -17,7 +17,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth',['except' => ['viewNews']]);
+        $this->middleware('auth', ['except' => ['viewNews']]);
     }
 
     /**
@@ -78,25 +78,5 @@ class HomeController extends Controller
         return view('medicines.newsView', compact('news'));
     }
 
-
-
-
-public function search()
-{
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-}
-
-

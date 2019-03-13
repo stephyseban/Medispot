@@ -1,9 +1,12 @@
 @extends('layouts.admin')
 @section('content')
 <div class ="container">
-<table class="table">
-<div class="float-right"><a class="btn btn-success btn-sm br-25" href="{{ url('admin/news/add/') }}" >  Add  </a></div>
 
+<div style="margin-bottom:60px;">
+  <div class="float-right"><a class="btn btn-primary " href="{{ url('admin/news/add/') }}" >  Add News </a></div>
+</div>
+
+<table class="table table-striped table-bordered">
 
 <tr>
 <th> Title  </th>
@@ -18,7 +21,7 @@
 
 <td>
 <a class="btn btn-success btn-sm br-25" href="{{ url('admin/news/edit/'.$news->id) }}" >  Edit  </a>
-       <a class="btn btn-success btn-sm br-25" onclick="return confirmDelete({{ $news->id}});"  > Delete </a>
+       <a class="btn btn-success text-white btn-sm br-25" onclick="return confirmDelete({{ $news->id}});"  > Delete </a>
 
 </td>
 </tr>

@@ -12,8 +12,8 @@
 
 
 
-<div class="form-group"><label>title</label><input type="text"name="title" value="{{ $news->title}}" placeholder="title"class="form-control"></div>
-<div class="form-group"><label>message</label><input type="text"name="message" value="{{$news->message}}"placeholder="message"class="form-control"></div>
+<div class="form-group"><label>Title</label><input type="text"name="title" value="{{ $news->title}}" placeholder="title"class="form-control"></div>
+<div class="form-group"><label>Message</label><textarea class="form-control"name="message" value="{{$news->message}}"placeholder="message"class="form-control"></textarea></div>
 
 
 

@@ -4,34 +4,56 @@
 
 <div class ="container">
 
-Total number of providers={{$users}}
-Total number of medicines={{$medicines}}
+<!-- Total number of providers={{$users}} -->
+<!-- Total number of medicines={{$medicines}} -->
 
+<div class="row">
 
-<table>
+<div class="col-md-6">
+
+<table class="table table-striped table-bordered">
+<thead>
 <tr>
-  <th>Name</th>
+<th scope="col">Name</th>
 </tr>
+</thead>
+  <tbody>
+  <tr>
 @foreach($latest_users as $user)
 
-<tr>
-    <td>{{ $user->name }} </td>
+<th scope="row">{{ $user->name }}</th>
 
 </tr>
-@endforeach
 
+@endforeach
+</tbody>
+</table>
+</div>
+<div class="col-md-6">
+
+
+
+<table class="table table-striped table-bordered">
+<thead>
 <tr>
   <th>Medicines</th>
 </tr>
+</thead>
+
 @foreach($latest_medicines as $medicine)
 
-<tr>
-<td> {{$medicine->name}}    </td>
+
+<th scope="row">{{$medicine->name}}    </th>
 </tr>
 
 
 @endforeach
-</table>
+</tbody>
+</table></div>
+
+</div>
+
+
 
 
 @stop

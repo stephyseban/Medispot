@@ -52,7 +52,7 @@
                 <a href="#!" class="menu-toggle">
                     <i class="fas fa-bars"></i>
                 </a>
-                <a href="index.html" class="spur-logo"><i class="fas fa-file-medical-alt"></i> <span>Medispot</span></a>
+                <a href="" class="spur-logo"><i class="fas fa-file-medical-alt"></i> <span>Medispot</span></a>
             </header>
             <nav class="dash-nav-list">
                 <a href="{{ url('/admin') }}" class="dash-nav-item">
@@ -61,50 +61,20 @@
                 <a href="{{url('admin/news')}}" class="dash-nav-item">
                     <i class="fas fa-newspaper"></i> News</a>
                 <div class="dash-nav-dropdown">
-                    <a href="{{url('admin/users')}}" class="dash-nav-item dash-nav-dropdown-toggle">
+                    <a href="{{url('admin/users')}}" class="dash-nav-item ">
                         <i class="fas fa-users"></i> Users </a>
+                        <a href="{{url('#')}}" class="dash-nav-item ">
+                        <i class="fas fa-sign-out-alt"></i> Logout </a>
+
+
                     <div class="dash-nav-dropdown-menu">
+
                         <a href="chartjs.html" class="dash-nav-dropdown-item">Chart.js</a>
                     </div>
                 </div>
                 </nav>
                 </div>
                 <div class="dash-app">
-            <header class="dash-toolbar">
-                <a href="#!" class="menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </a>
-                <a href="#!" class="searchbox-toggle">
-                    <i class="fas fa-search"></i>
-                </a>
-                <form class="searchbox" action="#!">
-                    <a href="#!" class="searchbox-toggle"> <i class="fas fa-arrow-left"></i> </a>
-                    <button type="submit" class="searchbox-submit"> <i class="fas fa-search"></i> </button>
-                    <input type="text" class="searchbox-input" placeholder="type to search">
-                </form>
-                <div class="tools">
-                    <a href="https://github.com/HackerThemes/spur-template" target="_blank" class="tools-item">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="#!" class="tools-item">
-                        <i class="fas fa-bell"></i>
-                        <i class="tools-item-count">4</i>
-                    </a>
-                    <div class="dropdown tools-item">
-                        <a href="#" class="" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-user"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-                            <a class="dropdown-item" href="#!">Profile</a>
-
-                            <a class="dropdown-item" href="login.html">Logout</a>
-
-                        </div>
-                    </div>
-                </div>
-            </header>
-
-
 
                 <main class="dash-content">
                 <div class="container-fluid">

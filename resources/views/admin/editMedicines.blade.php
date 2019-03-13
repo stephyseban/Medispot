@@ -28,7 +28,7 @@
 
 <div class="form-group">
     <label >Description</label>
-    <input type="text" placeholder="description of medicine"value="{{$medicines->description}}" class="form-control" name="description" style="border-radius:2x;" required />
+    <textarea class="form-control" placeholder="description of medicine" class="form-control" name="description" style="border-radius:2x;" required >{{$medicines->description}}</textarea>
   </div>
 
 
