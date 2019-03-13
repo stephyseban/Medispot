@@ -13,10 +13,9 @@
 
 <tr>
       <td>{{ $user->address }}</td>
-     
+
       </tr>
 
-@foreach
       <td>{{ $user->medicines}}</td>
 
 @stop

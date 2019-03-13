@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Medicine;
 use App\News;
+use App\User;
 use Auth;
 use Flashy;
 use Request;
@@ -77,6 +78,25 @@ class HomeController extends Controller
         $news = News::all();
         return view('medicines.newsView', compact('news'));
     }
+//profiek//
+    public function viewProfile()
+    {
 
-    
+        return view('profile.profile');
+    }
+
+    public function updateProfile()
+    {
+        $request = Request::all();
+        if ($request['password'] == $request['cpassword']) {
+            $data['password'] = bcrypt($request['password']);
+            $user = User::findOrFail(Auth::user()->id);
+            $user->update($data);
+            Flashy::success('Password updated succesfully');
+            return redirect('home');
+        }
+        Flashy::error('Password not matching');
+        return redirect('profile');
+    }
+
 }

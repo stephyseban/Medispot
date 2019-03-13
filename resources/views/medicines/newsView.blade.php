@@ -4,24 +4,26 @@
 
 
 
-
+<div class="container">
 
 
 <div class="row" style="margin-top:25px;">
 @foreach($news as $news)
 
-<div class="col-sm-3" style="min-height:125px;">
-<div class="card">
-   <div class="card-body">
-    <h5 class="card-title">{{ $news->title }}</h5>
-    <p class="card-text">{{ $news->message }}</p>
+<article style="width:100%;">
+	<h3>{{ $news->title }}</h3>
+	<ul class="list-inline">
+ 		<li class="list-inline-item">{{ $news->created_at  }}</li>
+	</ul>
+ 	<p class="">{{ $news->message }}</p>
+  </article>
 
-  </div></div>
-</div>
 
 @endforeach
 
 </div>
+</div>
+
 
 
 </div>

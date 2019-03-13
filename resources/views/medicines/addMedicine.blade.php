@@ -54,7 +54,7 @@
 
   <div class="form-group">
     <label >Avilability</label>
-    <input type="text" placeholder="avilability" class="form-control" name="availability" style="border-radius:2x;" required />
+    <input type="number" placeholder="avilability" class="form-control" name="availability" style="border-radius:2x;" required />
   </div>
 
 

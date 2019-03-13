@@ -34,8 +34,14 @@ Route::get('medicine/delete/{id}', 'HomeController@deleteMedicine');
 Route::get('medicine/news', 'HomeController@viewNews');
 
 //serch view medicine//
+
+Route::post('search', 'PageController@searchNearBy');
 Route::get('search', 'PageController@search');
 Route::get('search/{id}', 'PageController@searchResult');
+
+//profile of user//
+Route::get('profile', 'HomeController@viewProfile');
+Route::post('profile', 'HomeController@updateProfile');
 
 // ============================Admin Routes============================//
 //=======================================================================//

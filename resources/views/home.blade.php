@@ -3,10 +3,12 @@
 
 <div class="container">
 <div class="float-right">
-  <a href="{{ url('medicine/new') }}" class="btn btn-success">Add Medicine</a>
+  <a href="{{ url('medicine/new') }}" class="btn btn-default btn-main-sm">Add Medicine</a>
 </div>
-  <table class="table">
-  <thead class="thead-dark">
+<br>
+  <table class="table table-responsive product-dashboard-table" style="
+    display: inline-table;">
+  <thead>
     <tr>
       <th scope="col">Name</th>
       <th scope="col">Code</th>
@@ -28,8 +30,8 @@
       <td>{{ $medicine->manufacturer }}</td>
       <td>{{ $medicine->availability }}</td>
   <td>
-     <a class="btn btn-success btn-sm br-25" href="{{ url('/medicine/edit/'.$medicine->id) }}" > Edit </a>
-      <a class="btn btn-success btn-sm br-25 text-white" onclick="return confirmDelete({{ $medicine->id }});"  > Delete </a>
+     <a class="btn  btn-main-sm br-25" href="{{ url('/medicine/edit/'.$medicine->id) }}" > Edit </a>
+      <a class="btn  btn-main-sm br-25 text-white" onclick="return confirmDelete({{ $medicine->id }});"  > Delete </a>
   </td>
  </tr>
 

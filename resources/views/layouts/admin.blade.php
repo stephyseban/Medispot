@@ -56,15 +56,36 @@
             </header>
             <nav class="dash-nav-list">
                 <a href="{{ url('/admin') }}" class="dash-nav-item">
-                    <i class="fas fa-home"></i> Dashboard</a>
-                <div class="dash-nav-dropdown">
-                <a href="{{url('admin/news')}}" class="dash-nav-item">
-                    <i class="fas fa-newspaper"></i> News</a>
+                    <i class="fas fa-tachometer-alt"></i> Dashboard</a>
+
+                    <div class="dash-nav-dropdown">
+                    <a href="#!" class="dash-nav-item dash-nav-dropdown-toggle">
+                        <i class="fas fa-chart-bar"></i> News </a>
+                    <div class="dash-nav-dropdown-menu">
+                    <a  href="{{url('admin/news/add')}}"  class="dash-nav-dropdown-item">Add News</a>
+
+                        <a  href="{{url('admin/news')}}"  class="dash-nav-dropdown-item">Manage News</a>
+                    </div>
+                </div>
+
                 <div class="dash-nav-dropdown">
                     <a href="{{url('admin/users')}}" class="dash-nav-item ">
                         <i class="fas fa-users"></i> Users </a>
-                        <a href="{{url('#')}}" class="dash-nav-item ">
-                        <i class="fas fa-sign-out-alt"></i> Logout </a>
+
+                        <a href="{{url('/')}}" class="dash-nav-item ">
+                        <i class="fas fa-home"></i> Back to home </a>
+
+
+
+                        <a class="dash-nav-item " class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        <i class="fas fa-sign-out-alt"></i> Logout
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
 
 
                     <div class="dash-nav-dropdown-menu">
