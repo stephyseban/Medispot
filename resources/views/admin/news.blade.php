@@ -14,19 +14,28 @@
 <th> Action  </th>
 </tr>
 
-@foreach($news as $news)
+@foreach($news as $post)
 <tr>
-<td>{{$news->title}}</td>
-<td>{{$news->message}}</td>
-
+<td>{{$post->title}}</td>
+<td>{{$post->message}}</td>
 <td>
-<a class="btn btn-success btn-sm br-25" href="{{ url('admin/news/edit/'.$news->id) }}" >  Edit  </a>
-       <a class="btn btn-success text-white btn-sm br-25" onclick="return confirmDelete({{ $news->id}});"  > Delete </a>
-
+<a class="btn btn-success btn-sm br-25" href="{{ url('admin/news/edit/'.$post->id) }}" >  Edit  </a>
+<a class="btn btn-success text-white btn-sm br-25" onclick="return confirmDelete({{ $post->id}});"  > Delete </a>
 </td>
 </tr>
 @endforeach
+
+@if(count($news) == 0)
+<tr>
+<td colspan=3> There is no news available</td>
+</tr>
+@endif
+
 </table>
+
+
+{{ $news->render()  }}
+
 @stop
 @section('js')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.all.min.js"></script>

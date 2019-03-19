@@ -21,6 +21,12 @@
 
 @endforeach
 
+
+
+@if(count($news) == 0)
+<div class="alert">
+There is no news available</div>
+@endif
 </div>
 </div>
 

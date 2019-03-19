@@ -2,11 +2,11 @@
 @section('content')
 
 <div class="container">
-<div class="float-right">
-  <a href="{{ url('medicine/new') }}" class="btn btn-default btn-main-sm">Add Medicine</a>
+<div class="float-right" style="margin-bottom:30px;">
+  <a href="{{ url('medicine/new') }}" class="btn btn-default btn-main-sm"><i class="fa fa-plus"></i> Add Medicine</a>
 </div>
-<br>
-  <table class="table table-responsive product-dashboard-table" style="
+
+  <table   class="table table-responsive product-dashboard-table" style="
     display: inline-table;">
   <thead>
     <tr>

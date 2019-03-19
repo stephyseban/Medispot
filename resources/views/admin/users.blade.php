@@ -11,10 +11,10 @@
     <tr>
     <th scope="col">User name</th>
       <th scope="col">Email</th>
-      <th scope="col">Address</th>
       <th scope="col">Shopname</th>
+      <th scope="col">Address</th>
       <th scope="col">Location</th>
-       <th scope="col">Actions</th>
+       <th scope="col" width="225px">Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -23,8 +23,8 @@
 <tr>
       <td scope="row">{{ $user->name }}</td>
       <td>{{ $user->email }}</td>
-      <td>{{ $user->address }}</td>
       <td>{{ $user->shopname }}</td>
+      <td>{{ $user->address }}</td>
       <td>{{ $user->location }}</td>
 
 <td>
@@ -42,7 +42,10 @@
 
 @endforeach
 
+</tbody>
+</table>
 
+{{ $users->render() }}
 
 @stop
 

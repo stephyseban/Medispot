@@ -15,7 +15,7 @@
 
   <div class="form-group">
 <label>Name</label>
-<input type="text" placeholder="name" class="form-control" name="name" style="border-radius:2px;" required />
+<input type="text" placeholder="Name of Medicine" class="form-control" name="name" style="border-radius:2px;" required />
 </div>
 
 
@@ -60,7 +60,7 @@
 
 
   <div class="col-sm">
-     <input type="submit" class="btn btn-success btn-block  br-25" value="Add " />
+     <input type="submit" class="btn btn-success btn-sm br-25" value="Add " />
     </div>
 
 

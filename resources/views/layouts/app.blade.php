@@ -48,7 +48,7 @@
 				<div class="col-md-12">
 					<nav class="navbar navbar-expand-lg navbar-light navigation">
 						<a class="navbar-brand" href="{{ url('/') }}">
-							<img src="{{ url('images/logo.png') }}" alt="">
+						<a class="nav-link" href="{{ url('/') }}"><h3>Medispot</h3></a>
 						</a>
 						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 						 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -73,7 +73,7 @@
 									<a class="nav-link login-button" href="{{ url('/login') }}">Login</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link text-white add-button" href="{{ url('/register') }}"><i class="fa fa-plus-circle"></i> Add Shop</a>
+									<a class="nav-link text-white add-button" href="{{ url('/register') }}"><i class="fa fa-plus-circle"></i> Register</a>
                                 </li>
 
                                 @else
@@ -82,6 +82,8 @@
                                 <li class="nav-item">
 									<a class="nav-link login-button" href="{{ url('profile') }}">Profile</a>
 								</li>
+
+
 								<li class="nav-item">
                                 <a  class="nav-link text-white add-button" href="/logout" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
@@ -92,6 +94,15 @@
                                         @csrf
                                     </form>  </a>
                                 </li>
+
+@if(Auth::user()->isadmin == 1)
+<li  class="nav-item"><a href="{{ url('/admin') }}" style="
+    background: #333;
+    color: #fff;
+    padding: 8px 20px !important;
+    display: inline-block;" class="nav-link text-grey btn-secondary">   <i class="fa fa-user"></i>  Admin Panel</a></li>
+@endif
+
                                 @endguest
 							</ul>
 						</div>

@@ -3,23 +3,27 @@
 <div class="container">
 
 
-@foreach ($users as $user)
+
+
+<div class="row">
+
+@foreach ($shops as $shop)
+<div class="col-md-4">
 <div class="card" style="width: 20rem;">
 
-<div class="card">
   <div class="card-header">
- <a href="{{ url('/search/'.$user->id) }}" class="shopname">Shopname</a>
+ <a href="{{ url('/search/'.$shop->id.'?q='.$search) }}" class="shopname">{{ $shop->shopname }}</a>
+<p>Location {{$shop->location}}</p>
   </div>
 <div>
-
-<tr>
-
-      <td>{{ $user->shopname }}</td>
-
-
-</tr>
 </div>
 
 @endforeach
-</div
+</div>
+</div>
+
+
+
+
+
 @stop

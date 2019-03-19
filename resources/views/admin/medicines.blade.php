@@ -42,8 +42,18 @@
        </a>
 </tr>
 
-</div>
+@if(count($medicines) == 0)
+<tr>
+<td colspan="6">Currently, there is no medicines</td>
+</tr>
+@endif
 @endforeach
+</tbody>
+</table>
+
+
+{{ $medicines->render() }}
+
 @stop
 @section('js')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.all.min.js"></script>

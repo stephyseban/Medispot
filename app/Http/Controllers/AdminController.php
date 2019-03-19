@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Medicine;
 use App\News;
 use App\User;
+use Auth;
 use Flashy;
 use Request;
 
@@ -18,26 +19,37 @@ class AdminController extends Controller
 
     public function verifyAdmin()
     {
+
         if (Auth::user()->isAdmin == 0) {
-            dd(exit);
+
+            Flashy::error('You don\'t have the permission');
+            header('HTTP/1.1 301 Moved Permanently');
+            header('Location: https://medispot.test/');
+            exit;
+            return redirect('/');
         }
 
     }
-//----------------medicine controll details for admin
     public function medicine_shop($id)
     {
-        $medicines = Medicine::where('userid', $id)->get();
+        $this->verifyAdmin();
+
+        $medicines = Medicine::where('userid', $id)->paginate(10);
         return view('admin.medicines', compact('medicines'));
     }
 
     public function editMedicine($id)
     {
+        $this->verifyAdmin();
+
         $medicines = Medicine::findOrFail($id);
         return view('admin.editMedicines', compact('medicines'));
     }
 
     public function updateadminMedicine($id)
     {
+        $this->verifyAdmin();
+
         $medicines = Medicine::findOrFail($id);
         $req = Request::all();
         $medicines->update($req);
@@ -47,6 +59,8 @@ class AdminController extends Controller
 
     public function addMedicines()
     {
+        $this->verifyAdmin();
+
         return view('admin.medicines');
 
     }
@@ -54,6 +68,7 @@ class AdminController extends Controller
     // code for delete medicine from user account @ADMIN//
     public function deleteadminMedicine($id)
     {
+        $this->verifyAdmin();
 
         $medicines = Medicine::findOrfail($id);
         $req = Request::all();
@@ -65,18 +80,24 @@ class AdminController extends Controller
 //------------user controll details for admin
     public function users()
     {
-        $users = User::all();
+        $this->verifyAdmin();
+
+        $users = User::paginate(10);
         return view('admin.users', compact('users'));
     }
 
     public function editUsers($id)
     {
+        $this->verifyAdmin();
+
         $user = User::findOrFail($id);
         return view('admin.editusers', compact('user'));
     }
 
     public function updateUsers($id)
     {
+        $this->verifyAdmin();
+
         $user = User::findOrfail($id);
         $req = request::all();
         $user->update($req);
@@ -86,6 +107,8 @@ class AdminController extends Controller
 
     public function deleteUsers($id)
     {
+        $this->verifyAdmin();
+
         $user = User::findOrfail($id);
         $req = request::all();
         $user->delete($req);
@@ -96,17 +119,23 @@ class AdminController extends Controller
     // news controlls from admin
     public function news()
     {
-        $news = News::all();
+        $this->verifyAdmin();
+
+        $news = News::paginate(10);
         return view('admin.news', compact('news'));
     }
 
     public function addNews()
     {
+        $this->verifyAdmin();
+
         return view('admin.addNews');
     }
 
     public function storeNews()
     {
+        $this->verifyAdmin();
+
         $req = Request::all();
         News::create($req);
         Flashy::message('News Added Successfully!!!!');
@@ -115,11 +144,15 @@ class AdminController extends Controller
 
     public function editNews($id)
     {
+        $this->verifyAdmin();
+
         $news = News::findOrFail($id);
         return view('admin.editNews', compact('news'));
     }
     public function updateNews($id)
     {
+        $this->verifyAdmin();
+
         $news = News::findOrfail($id);
         $req = request::all();
         $news->update($req);
@@ -129,6 +162,8 @@ class AdminController extends Controller
 
     public function deleteNews($id)
     {
+        $this->verifyAdmin();
+
         $news = News::findOrfail($id);
         $req = request::all();
         $news->delete($req);
@@ -139,6 +174,8 @@ class AdminController extends Controller
     //====admin view------//
     public function adminView()
     {
+        $this->verifyAdmin();
+
         $users = User::count();
         $medicines = Medicine::count();
 
