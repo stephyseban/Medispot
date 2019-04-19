@@ -19,14 +19,8 @@ class AdminController extends Controller
 
     public function verifyAdmin()
     {
-
-        if (Auth::user()->isAdmin == 0) {
-
-            Flashy::error('You don\'t have the permission');
-            header('HTTP/1.1 301 Moved Permanently');
-            header('Location: https://medispot.test/');
-            exit;
-            return redirect('/');
+        if (Auth::user()->isadmin == 0) {
+            die('Access denied');
         }
 
     }

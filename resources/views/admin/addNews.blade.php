@@ -9,8 +9,8 @@
 
 {{ csrf_field() }}
 
-<div class="form-group"><label>title</label><input type="text" name="title" placeholder="title"class="form-control">
-<div class="form-group"><label>message</label><textarea class="form-control" name="message" placeholder="message"class="form-control"></textarea>
+<div class="form-group"><label>Title</label><input type="text" name="title" placeholder="Title"class="form-control">
+<div class="form-group"><label>Message</label><textarea class="form-control" name="message" placeholder="message"class="form-control"></textarea>
 
 
 </div>

@@ -103,7 +103,7 @@
     display: inline-block;" class="nav-link text-grey btn-secondary">   <i class="fa fa-user"></i>  Admin Panel</a></li>
 @endif
 
-                                @endguest
+ @endguest
 							</ul>
 						</div>
 					</nav>

@@ -2,28 +2,26 @@
 @section('content')
 <div class="container">
 
-
-
-
-<div class="row">
-
 @foreach ($shops as $shop)
-<div class="col-md-4">
-<div class="card" style="width: 20rem;">
+<div class="row">
+<div class="col-md-12">
+
+<div class="card" style="width: 20rem;" >
 
   <div class="card-header">
- <a href="{{ url('/search/'.$shop->id.'?q='.$search) }}" class="shopname">{{ $shop->shopname }}</a>
-<p>Location {{$shop->location}}</p>
-  </div>
+  <h3><b>{{$shop->name}}</b></h3><br>
+Shopname : <a href="{{ url('/search/'.$shop->id.'?q='.$search) }}" class="shopname">{{ $shop->shopname }}</a><br>
+Location : {{$shop->location}}
+</div>
 <div>
 </div>
-
+</div>
 @endforeach
 </div>
-</div>
 
-
-
-
+@if(count($shops) == 0)
+<div class="alert">
+These  medicine not available</div>
+@endif
 
 @stop

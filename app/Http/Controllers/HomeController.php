@@ -89,10 +89,10 @@ class HomeController extends Controller
     {
         $request = Request::all();
         if ($request['password'] == $request['cpassword']) {
-            $data['password'] = bcrypt($request['password']);
+            $request['password'] = bcrypt($request['password']);
             $user = User::findOrFail(Auth::user()->id);
-            $user->update($data);
-            Flashy::success('Password updated succesfully');
+            $user->update($request);
+            Flashy::success('profile updated succesfully');
             return redirect('home');
         }
         Flashy::error('Password not matching');

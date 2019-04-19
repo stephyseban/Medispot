@@ -50,6 +50,7 @@
                                 @endif
                             </div>
                         </div>
+
                         <div class="form-group row">
                             <label for="location" class="col-md-4 col-form-label text-md-right">{{ __('Location') }}</label>
 
@@ -61,11 +62,51 @@
                                         <strong>{{ $errors->first('location') }}</strong>
                                     </span>
                                 @endif
+
+                                <input type="hidden" name="lat" id="lat"/>
+                                <input type="hidden" name="lat" id="lon"/>
+
+
                             <div id="map" style="display: all; width: 100%;height: 276px;"></div>
                             </div>
+                        </div>
 
+
+                            <div class="form-group row">
+                            <label for="lat" class="col-md-4 col-form-label text-md-right">{{ __('Latitude') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="lat" type="numeric" class="form-control{{ $errors->has('latitude') ? ' is-invalid' : '' }}" name="lat" value="{{ old('lat') }}" required autofocus>
+
+                                @if ($errors->has('latitude'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('latitude') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
 
                         </div>
+
+
+
+
+                        <div class="form-group row">
+                            <label for="lon" class="col-md-4 col-form-label text-md-right">{{ __('Logitude') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="lon" type="numeric" class="form-control{{ $errors->has('longitude') ? ' is-invalid' : '' }}" name="lon" value="{{ old('lon') }}" required autofocus>
+
+                                @if ($errors->has('longitude'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('longitude') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+
+                        </div>
+
+
+
 
 
 
@@ -83,21 +124,6 @@
                                 @endif
                             </div>
                         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
@@ -163,6 +189,11 @@
 
      google.maps.event.addListener(map, "click", function (e) {
   var latLng = e.latLng;
+  let lat = latLng.lat();
+  let lon = latLng.lng()
+
+        document.getElementById("lat").value = lat;
+        document.getElementById("lon").value = lon;
 
 });
 
@@ -229,8 +260,6 @@
  <script async defer
  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5Z0NnHXEtgub4081O62H_gDtbfyo108k&callback=initMap">
  </script>
-
-
 
 @endsection
 

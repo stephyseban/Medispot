@@ -23,12 +23,9 @@ class CreateUsersTable extends Migration
             $table->string('shopname', 30)->nullable();
             $table->string('location', 25)->nullable();
             $table->string('phonenumber', 25)->nullable();
-
             $table->decimal('lat', 9, 6)->nullable();
             $table->decimal('lon', 9, 6)->nullable();
-
             $table->boolean('isadmin')->default(0);
-
             $table->rememberToken();
             $table->timestamps();
         });

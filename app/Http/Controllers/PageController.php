@@ -16,7 +16,7 @@ class PageController extends Controller
     {
 
         $users = User::all();
-        return view('medicines.searchView', compact('users'));
+        return view('medicines.searchView', compact('users '));
 
     }
 
@@ -26,7 +26,7 @@ class PageController extends Controller
         $search = Input::get('q');
         $medicine = '';
 
-        $medicine = Medicine::where('name', 'LIKE', '%' . $search . '%')->first();
+        $medicine = Medicine::where('name', 'LIKE', '%' . $search . '%')->where('userid', $id)->get();
 
         return view('medicines.searchResult', compact('user', 'search', 'medicine'));
     }
@@ -50,7 +50,7 @@ class PageController extends Controller
         AS distance
         FROM users LEFT JOIN medicines on users.id = medicines.userid ) AS distances
     WHERE distance < ' . $max_distance . ' AND name LIKE "%' . $request['search'] . '%"
-    ORDER BY distance LIMIT 1;
+    ORDER BY distance DESC;
 ');
 
         } catch (\Exception $e) {

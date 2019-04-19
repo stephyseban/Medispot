@@ -2,14 +2,10 @@
 @section('content')
 
 <div class="container">
-
-
 <div class="row">
 <div class="col-sm-3">
 
 <div class="package-content bg-light border text-center p-5 my-2 my-lg-0">
-
-
                     <div class="header">
 								<h4>{{ $user->shopname}}</h4>
 							</div>
@@ -30,13 +26,13 @@
 <th>Description </th>
 <th>Availability </th>
 </tr>
-
+@foreach($medicine as $medi)
 <tr>
-<td>{{ $medicine->name }}</td>
-<td>{{ $medicine->description }}</td>
-<td>{{ $medicine->availability }}</td>
+<td>{{ $medi->name }}</td>
+<td>{{ $medi->description }}</td>
+<td>{{ $medi->availability }}</td>
 </tr>
-
+@endforeach
 </table>
 </div>
 </div>
@@ -94,9 +90,6 @@
          });
        });
      }
-
-
-
    function downloadUrl(url, callback) {
      var request = window.ActiveXObject ?
          new ActiveXObject('Microsoft.XMLHTTP') :

@@ -19,6 +19,7 @@
 <div class="form-group"><label>location</label><input type="text"name="location" value="{{$user->location}}"placeholder="location"class="form-control"></div>
 <div class="form-group"><label>Latitude</label><input type="text"name="lat" value="{{$user->lat}}" placeholder="Latitude" class="form-control"></div>
 <div class="form-group"><label>Longitude</label><input type="text"name="lon" value="{{$user->lon}}" placeholder="Longitude" class="form-control"></div>
+<div class="form-group"><label>Isadmin</label><input type="text"name="isadmin" value="{{$user->isadmin}}" placeholder="admin status" class="form-control"></div>
 
 
 <div class="">
