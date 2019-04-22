@@ -1,22 +1,27 @@
+
 @extends('layouts.app')
 @section('content')
 <div class="container">
 
-@foreach ($shops as $shop)
 <div class="row">
+
+@foreach ($shops as $shop)
 <div class="col-md-12">
 
+<a href="{{ url('/search/'.$shop->id.'?q='.$search) }}" >
 <div class="card" style="width: 20rem;" >
-
   <div class="card-header">
   <h3><b>{{$shop->name}}</b></h3><br>
-Shopname : <a href="{{ url('/search/'.$shop->id.'?q='.$search) }}" class="shopname">{{ $shop->shopname }}</a><br>
+Shopname :  {{ $shop->shopname }} <br>
 Location : {{$shop->location}}
 </div>
-<div>
 </div>
+
 </div>
+</a>
 @endforeach
+</div>
+
 </div>
 
 @if(count($shops) == 0)

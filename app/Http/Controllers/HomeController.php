@@ -28,7 +28,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $medicines = Medicine::where('userid', Auth::user()->id)->paginate(10);
+        $medicines = Medicine::where('userid', Auth::user()->id)->paginate(3);
         return view('home', compact('medicines'));
     }
 

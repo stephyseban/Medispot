@@ -28,7 +28,7 @@ class AdminController extends Controller
     {
         $this->verifyAdmin();
 
-        $medicines = Medicine::where('userid', $id)->paginate(10);
+        $medicines = Medicine::where('userid', $id)->paginate(1);
         return view('admin.medicines', compact('medicines'));
     }
 

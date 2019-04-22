@@ -18,8 +18,6 @@
 
 <div class="col-sm-9">
 <div id="map" style="display: all; width: 100%;height: 276px;"></div>
-
-
 <table style="margin-top:20px;" class="table table-striped table-bordered">
 <tr>
 <th>Name </th>
