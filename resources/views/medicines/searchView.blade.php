@@ -26,7 +26,7 @@ Location : {{$shop->location}}
 
 @if(count($shops) == 0)
 <div class="alert">
-These  medicine not available</div>
+These  medicine not available......</div>
 @endif
 
 @stop
